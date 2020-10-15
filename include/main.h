@@ -2,8 +2,8 @@
 #include <settings.h>
 #include <HX711.h>
 
-#define PRESSED 0x1
-#define UNPRESSED 0x0
+#define PRESSED 0x0
+#define UNPRESSED 0x1
 
 void calibrate();
 void ready();
