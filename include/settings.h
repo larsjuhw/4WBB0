@@ -14,4 +14,10 @@
 #define WEIGHT2     200
 #define WEIGHT3     300
 
-#define SCALE_FACTOR 400
+#define PERCENTAGE1 0.9
+#define PERCENTAGE2 0.75
+#define PERCENTAGE3 0.6
+
+#define SCALE_FACTOR 377
+
+#define TARE_PIN 9
