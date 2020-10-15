@@ -32,10 +32,6 @@ void setup() {
     pinMode(buttons[1], INPUT_PULLUP);
     pinMode(buttons[2], INPUT_PULLUP);
 
-#ifdef DEBUG
-    pinMode(TARE_PIN, INPUT_PULLUP);
-#endif
-
     scale.begin(HX711_DT, HX711_SCK);
     calibrate();
 
@@ -51,16 +47,10 @@ void loop() {
             Serial.print("Detect press of button ");
             Serial.println(i);
 #endif
+            scale.tare();
             buttonHandler(i);
         }
     }
-
-#ifdef DEBUG
-    if (digitalRead(TARE_PIN) == PRESSED) {
-        scale.tare();
-        Serial.println("Tare reset");
-    }
-#endif
 
     long raw_reading = scale.get_units(4);
     long reading = (raw_reading > 0) ? raw_reading : 0;

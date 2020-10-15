@@ -19,5 +19,3 @@
 #define PERCENTAGE3 0.6
 
 #define SCALE_FACTOR 377
-
-#define TARE_PIN 9
