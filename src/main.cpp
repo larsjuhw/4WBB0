@@ -2,11 +2,6 @@
 
 #define DEBUG
 
-// 119279
-// 127039
-// 15682 (small delta)
-// 121854
-
 HX711 scale;
 
 const int buttons[3] = { BT1, BT2, BT3 };
@@ -34,8 +29,6 @@ void setup() {
 
     scale.begin(HX711_DT, HX711_SCK);
     calibrate();
-
-    delay(500);
     ready();
 }
 
@@ -90,7 +83,7 @@ void calibrate() {
 #ifdef DEBUG
         Serial.println("HX711 not found.");
 #endif
-        delay(1500);
+        delay(1000);
     }
     scale.set_scale(SCALE_FACTOR);
     scale.tare(10);
@@ -104,7 +97,6 @@ void calibrate() {
  * Executed when setup is completed.
  */
 void ready() {
-    scale.tare();
 
     beep(50, 50, 2);
 
