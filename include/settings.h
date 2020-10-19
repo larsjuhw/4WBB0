@@ -10,9 +10,9 @@
 #define BT2         (A2)
 #define BT3         (A3)
 
-#define WEIGHT1     100
-#define WEIGHT2     200
-#define WEIGHT3     300
+#define WEIGHT1     160
+#define WEIGHT2     250
+#define WEIGHT3     325
 
 #define PERCENTAGE1 0.9
 #define PERCENTAGE2 0.75
