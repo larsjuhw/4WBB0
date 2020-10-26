@@ -1,6 +1,6 @@
 #include <main.h>
 
-#define DEBUG
+// #define DEBUG
 
 HX711 scale;
 
@@ -19,7 +19,7 @@ void setup() {
     Serial.println("Initialization..");
 #endif
     pinMode(BUZZER, OUTPUT);
-    digitalWrite(BUZZER, HIGH); // Buzzer is silent when voltage is HIGH
+    digitalWrite(BUZZER, OFF);
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, LOW);
 
@@ -124,14 +124,14 @@ void buttonHandler(int index) {
  * @param amount Amount of times to enable speaker
  */
 void beep(unsigned long length, unsigned long wait, int amount) {
-    digitalWrite(BUZZER, LOW);
+    digitalWrite(BUZZER, ON);
     delay(length);
-    digitalWrite(BUZZER, HIGH);
+    digitalWrite(BUZZER, OFF);
     for (int t = 1; t < amount; t++) {
         delay(wait);
-        digitalWrite(BUZZER, LOW);
+        digitalWrite(BUZZER, ON);
         delay(length);
-        digitalWrite(BUZZER, HIGH);
+        digitalWrite(BUZZER, OFF);
     }
 }
 
